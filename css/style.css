@@ -1,0 +1,124 @@
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+}
+main {
+  max-width: 22rem;
+  margin: 0.7rem auto;
+}
+.container {
+  max-width: 40rem;
+  margin: 50px auto;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(237, 230, 203, 0.9);
+  border: 2px solid #393e5b;
+  border-radius: 5px;
+  color: #1b1d1d;
+}
+
+.search-form {
+  width: 50%;
+  display: flex;
+  margin-left: auto;
+}
+.input-group input {
+  border-color: #ff6053;
+}
+.search-button {
+  --bs-btn-color: #ff6053;
+  --bs-btn-border-color: #ff6053;
+  --bs-btn-hover-bg: #ff6053;
+  --bs-btn-hover-border-color: #ff6053;
+  --bs-btn-active-bg: #ff6053;
+  --bs-btn-active-border-color: #ff6053;
+  --bs-btn-disabled-color: #ff6053;
+  --bs-btn-disabled-border-color: #ff6053;
+}
+.current-location {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #393e5b;
+}
+.current-date {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.central-data {
+  margin: 2rem auto;
+}
+.central-icon {
+  padding-left: 0;
+  text-align: center;
+}
+.central-icon img {
+  max-width: 4rem;
+}
+.icon-description,
+.temp-description {
+  font-size: 0.85rem;
+}
+.current-temp {
+  padding-right: 0;
+  text-align: right;
+}
+.temp-number {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #393e5b;
+  display: inline-block;
+  line-height: 5rem;
+}
+
+.units {
+  font-size: 1rem;
+  font-weight: 400;
+  vertical-align: top;
+  padding-left: 0;
+}
+
+.units a {
+  text-decoration: none;
+}
+.units .active {
+  color: #ff6053;
+}
+.units .inactive {
+  color: #000;
+}
+.misc-data {
+  bottom: 0;
+}
+.fa-cloud-rain,
+.fa-wind {
+  color: #393e5b;
+}
+hr {
+  border-top: 2px solid #ff6053;
+}
+.forecast-footer {
+  margin: 50px 0 10px;
+}
+
+.forecast-block {
+  text-align: center;
+}
+.forecast-icon img {
+  max-width: 2.5rem;
+}
+.high-temp {
+  font-weight: 600;
+}
+@media (max-width: 576px) {
+  .search-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .misc-data {
+    margin-top: 15px;
+  }
+  .forecast-block {
+    margin-bottom: 15px;
+  }
+}
