@@ -110,6 +110,20 @@ hr {
 .high-temp {
   font-weight: 600;
 }
+.coder {
+  display: block;
+  text-align: center;
+  margin-top: 1.75rem;
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #1b1d1d;
+}
+.fa-github {
+  font-size: 1rem;
+}
+.coder:hover {
+  color: #393e5b;
+}
 @media (max-width: 576px) {
   .search-form {
     width: 100%;
