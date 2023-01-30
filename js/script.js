@@ -1,3 +1,23 @@
+//get last update time
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturtday",
+  ];
+  let day = days[now.getDay()];
+  let month = String(now.getMonth() + 1).padStart(2, "0");
+  let date = now.getDate();
+  let year = now.getFullYear();
+  let hour = now.getHours();
+  let minutes = String(now.getMinutes()).padStart(2, "0");
+  return `${day}, ${date}/${month}/${year} at ${hour}:${minutes}`;
+}
 //get API by city
 function updateWeatherByCity(city) {
   let apiKey = "ff1d9ea9376b5c27a82e04fc2b2abdbb";
@@ -23,7 +43,7 @@ function searchDefaultCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeather);
 }
-//update current city and temperature
+//update weather data
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
@@ -38,7 +58,9 @@ function displayWeather(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
-  console.log(response.data);
+  document.querySelector("#current-date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 //get geolocation
 function getCoordinateWeather() {
