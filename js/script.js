@@ -45,6 +45,7 @@ function searchDefaultCity(city) {
 }
 //update weather data
 function displayWeather(response) {
+  celsiusTemp = response.data.main.temp;
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
   document.querySelector("#current-location").innerHTML = city;
@@ -89,4 +90,36 @@ function getCoordinateWeather() {
 let geolocationButton = document.querySelector("#geolocation-btn");
 geolocationButton.addEventListener("click", getCoordinateWeather);
 
+//unit conversion
+let celsiusTemp = null;
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  //remove active class for celsius link
+  celsius.classList.remove("active");
+  celsius.classList.add("inactive");
+  fahrenheit.classList.remove("inactive");
+  fahrenheit.classList.add("active");
+
+  let currentTemp = document.querySelector("#current-temp-number");
+
+  currentTemp.innerHTML = Math.round(celsiusTemp * 1.8 + 32);
+}
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", displayFahrenheit);
+
+function displayCelsius(event) {
+  event.preventDefault();
+
+  fahrenheit.classList.remove("active");
+  fahrenheit.classList.add("inactive");
+  celsius.classList.remove("inactive");
+  celsius.classList.add("active");
+  let currentTemp = document.querySelector("#current-temp-number");
+  currentTemp.innerHTML = Math.round(celsiusTemp);
+}
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", displayCelsius);
+
+//default city
 searchDefaultCity("Lisbon");
