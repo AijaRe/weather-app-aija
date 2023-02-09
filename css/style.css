@@ -75,7 +75,7 @@ main {
   font-size: 1rem;
   font-weight: 400;
   vertical-align: top;
-  padding-left: 0;
+  padding: 0;
 }
 
 .units a {
@@ -132,9 +132,13 @@ hr {
     padding: 0 10px;
   }
   .misc-data {
-    margin-top: 15px;
+    display: block;
+    margin: 15px 5px 0 auto;
+  }
+  .forecast-row {
+    margin: 20px 0 0;
   }
   .forecast-block {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
 }
